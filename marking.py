@@ -196,15 +196,15 @@ class marks:
         self.comments = []
         self.feedback = ''
 
-self = marks()
-self.get_mark_scheme()
+mark_obj = marks()
+mark_obj.get_mark_scheme()
 mark_another = True
 while mark_another == True:
-    self.mark()
-    self.get_feedback()
-    self.save_feedback()
-    print(self.feedback)
-    self.flush()
+    mark_obj.mark()
+    mark_obj.get_feedback()
+    mark_obj.save_feedback()
+    print(mark_obj.feedback)
+    mark_obj.flush()
     ma = input('Mark another script? [Y/n]...')
     if bool(ma) == True and (ma=='n' or ma=='N'):
         mark_another = False
