@@ -93,7 +93,7 @@ class marking_scheme:
         if os.path.exists('./saved_mark_schemes') == False:
             os.mkdir('./saved_mark_schemes')
         if fn == '':
-            fn = input('Enter file name (or realative path)... \n')
+            fn = input('Enter file name... \n')
         if os.path.exists('./saved_mark_schemes/'+fn):
             overwrite = input('Overwrite file? [Y/n]... \n')
             if bool(overwrite) == True and (overwrite=='n' or overwrite=='N'):
@@ -108,12 +108,12 @@ class marks:
         self.comments = []
     
     def load(self):
-        self.fn = './saved_mark_schemes/'+input('Enter name of saved mark scheme... \n')
-        if os.path.exists(self.fn)==False:
+        self.fn = input('Enter name of saved mark scheme... \n')
+        if os.path.exists('./saved_mark_schemes/'+self.fn)==False:
             print('File does not exist.')
             return
         print('Loading marking scheme...')
-        with open(self.fn, 'rb') as file:
+        with open('./saved_mark_schemes/'+self.fn, 'rb') as file:
             self.m = pickle.load(file)
         print('Loaded. \n')
     
