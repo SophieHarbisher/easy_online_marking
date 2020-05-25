@@ -100,6 +100,7 @@ class marking_scheme:
                 return
         with open('./saved_mark_schemes/'+fn, 'wb') as file:  # Overwrites any existing file.
             pickle.dump(self, file)
+        return fn
 
 class marks:
     
@@ -122,7 +123,7 @@ class marks:
         if bool(use_existing) == True and (use_existing=='n' or use_existing=='N'):
             m = marking_scheme()
             m.construct()
-            m.save()
+            self.fn = m.save()
             self.m = m
         else:
             self.load()
