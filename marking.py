@@ -133,6 +133,7 @@ class marks:
         print('[-1] Add a new comment \n')
     
     def mark_part(self, qu_ref, part_ref):
+        part_mark = print('Marking question '+str(qu_ref)+' part '+str(part_ref)+'...')
         print('Available comments: ')
         self.print_comments(qu_ref, part_ref)
         choice = int(input('Choose an option...'))
